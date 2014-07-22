@@ -1,12 +1,14 @@
 'use strict';
 
+var clickQuest = angular.module('clickQuestApp', ['ngResource','ngRoute']);
 
-// Declare app level module which depends on filters, and services
-var clickQuest = angular.module('clickQuestApp', ['ngResource']);
-
-/*clickQuest.config( function($routeProvider) {
+clickQuest.config( function($routeProvider) {
   $routeProvider.
-	when('/onRent', 
-		{templateUrl: 'views/onRents.html', controller: 'OnRentController'}).
-	otherwise({redirectTo: '/'});
-});*/
+	when('/game', 
+		{templateUrl: 'views/game.html', controller: 'GameController'}).
+	when('/login', 
+		{templateUrl: 'views/login.html', controller: 'LoginController'}).
+	when('/register', 
+		{templateUrl: 'views/register.html', controller: 'RegisterController'}).
+	otherwise({redirectTo: '/login'});
+});
